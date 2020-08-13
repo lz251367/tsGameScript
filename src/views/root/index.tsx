@@ -1,7 +1,7 @@
 import React from 'react'
-import HomePage from '../home/homePage'
-import MyPage from '../my/myPage'
-import ToolPage from '../tool/toolPage'
+import HomePage from '../home'
+import MyPage from '../my'
+import ToolPage from '../tool'
 
 import {createBottomTabNavigator} from 'react-navigation-tabs'
 
