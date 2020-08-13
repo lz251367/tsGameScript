@@ -16,6 +16,22 @@ const HomePage: SFC<Props> = ({ navigation }) => {
           navigation.navigate("Login")
         }}
       ></Button>
+      <Button
+        title={"去体检预约一"}
+        onPress={() => {
+          navigation.navigate("BookingDetails", {
+            pageName: 1
+          })
+        }}
+      ></Button>
+      <Button
+        title={"去体检预约二"}
+        onPress={() => {
+          navigation.navigate("BookingDetails", {
+            pageName: 2
+          })
+        }}
+      ></Button>
     </View>
   )
 }
