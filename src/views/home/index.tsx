@@ -1,6 +1,12 @@
 import React, { SFC } from 'react'
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { View, Text, StyleSheet, Button, ScrollView } from 'react-native'
 import { NavigationStackProp } from 'react-navigation-stack'
+import routeHelper from '../../router/routerHelper'
+import commonColors from '../../utils/commonColors'
+import CommonSwiper from '../../components/CommonSwiper'
+import FunctionNavigate from '../../views/home/functionNavigate'
+
+import Advertisement from './Advertisement'
 
 type Props = {
   navigation: NavigationStackProp
@@ -8,39 +14,18 @@ type Props = {
 
 const HomePage: SFC<Props> = ({ navigation }) => {
   return (
-    <View style={styles.home}>
-      <Text>{"homeS"}</Text>
-      <Button
-        title={"去登录页"}
-        onPress={() => {
-          navigation.navigate("Login")
-        }}
-      ></Button>
-      <Button
-        title={"去体检预约一"}
-        onPress={() => {
-          navigation.navigate("BookingDetails", {
-            pageName: 1
-          })
-        }}
-      ></Button>
-      <Button
-        title={"去体检预约二"}
-        onPress={() => {
-          navigation.navigate("BookingDetails", {
-            pageName: 2
-          })
-        }}
-      ></Button>
-    </View>
+    <ScrollView>
+      <CommonSwiper></CommonSwiper>
+      <FunctionNavigate></FunctionNavigate>
+      <Advertisement></Advertisement>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
-  home: {
+  wrapper: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: commonColors.backgroudGray
   }
 })
 export default HomePage
